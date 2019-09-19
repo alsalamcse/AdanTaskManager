@@ -16,10 +16,10 @@ public class Singin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singin2);
-        etAdd1=findViewById(R.id.etAdd1);
-        etAdd2=findViewById(R.id.etAdd2);
-        sn1=findViewById(R.id.sn1);
-        sp1=findViewById(R.id.sp1);
+        etAdd1=(EditText) findViewById(R.id.etAdd1);
+        etAdd2=(EditText) findViewById(R.id.etAdd2);
+        sn1=(Button) findViewById(R.id.sn1);
+        sp1=(Button) findViewById(R.id.sp1);
 
     }
 

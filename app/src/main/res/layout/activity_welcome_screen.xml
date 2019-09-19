@@ -7,10 +7,12 @@
     tools:context=".WelcomeScreen">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="374dp"
-        android:layout_height="507dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-31dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[7]" />
+        android:id="@+id/imageView5"
+        android:layout_width="306dp"
+        android:layout_height="215dp"
+        app:srcCompat="@mipmap/ic_welcome "
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="258dp"
+        tools:srcCompat="@mipmap/ic_welcome " />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

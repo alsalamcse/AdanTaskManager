@@ -9,9 +9,8 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 
 public class settings extends AppCompatActivity {
-    private EditText edtSound;
-    private Switch switch;
-    private EditText edtSound;
+    private EditText edtsound;
+    private Switch switchOnOff;
     private SeekBar seekBar2;
     private Button btn1;
 
@@ -21,9 +20,8 @@ public class settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        edtSound=(EditText) findViewById(R.id.edtSound);
-        switch=(Switch)findViewById(R.id.switch);
-        edtSound=(EditText) findViewById(R.id.edtSound);
+        switchOnOff=(Switch)findViewById(R.id.switchOnOff);
+        edtsound=(EditText) findViewById(R.id.edtsound);
         seekBar2=(SeekBar) findViewById(R.id.seekBar2);
 
 
