@@ -1,11 +1,15 @@
 package com.example.adantaskmanager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Singin extends AppCompatActivity {
@@ -49,6 +53,7 @@ public class Singin extends AppCompatActivity {
         }
         if (isok)
         {
+            signIn(email,password);
 
         }
 
@@ -61,7 +66,22 @@ public class Singin extends AppCompatActivity {
     }
     private void signIn(String email,String password){
         FirebaseAuth auth=FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(email, password);
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful())
+
+                    {
+                //go to ,mail screen(all task activity)
+
+            }
+            else
+            {
+                etAdd1.setError("email or password is wrong");
+            }
+
+            }
+        });
     }
 
 }
