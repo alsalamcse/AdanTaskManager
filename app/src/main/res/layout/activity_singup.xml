@@ -7,7 +7,7 @@
     tools:context=".Singup">
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/first name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="84dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/last name "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="161dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,7 +37,7 @@
         tools:layout_editor_absoluteY="260dp" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteY="343dp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,7 +57,7 @@
         tools:layout_editor_absoluteY="430dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/retpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -67,7 +67,7 @@
         tools:layout_editor_absoluteY="516dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnsave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="save"
