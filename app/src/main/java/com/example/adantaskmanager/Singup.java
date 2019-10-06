@@ -1,11 +1,15 @@
 package com.example.adantaskmanager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,53 +38,64 @@ public class Singup extends AppCompatActivity {
         btnsave = (Button) findViewById(R.id.btnsave);
     }
 
-        private void dataHndler() {
-            boolean isok = true;
-            String email = EditText.getText().toString();
-            String password1 = EditText.getText().toString();
-            String firstname = EditText.getText().toString();
-            String lastname = EditText.getText().toString();
-            String phone = EditText.getText().toString();
-            String retpass = EditText.getText().toString();
-            String password2 = EditText.getText().toString();
-            if (email.length() < 4 ||
-                    email.indexOf('@') < 0 ||
-                    email.indexOf('.') < 0) {
-                email.setError.("wrong Email");
-
-            }
-            if (password1.length() < 8 || password1.equals(password2) == false) {
-                password1.setError("Have to be at least 8 char and the same password ");
-                password2.setError("Have to be at least 8 char and the same password ");
-
-                isok = false;
-            }
-            if (lastname.length() == 0) {
-                firstname.setError("enter name");
-                isok = false;
-            }
-            if (isok) {
-                creatAcount(email, password1, password2, phone, lastname);
-            }
-        }
-        private void creatAcount(final String email, String password1, String password2, String firstname , String lastname) {
-            FirebaseAuth auth = FirebaseAuth.getInstance();
-            auth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if ((task.isSuccessful())) {
-                        finish();
-
-                    }
-                    else
-                        {
-                        email.setError("Sign n up fialed");
-                    }
-                }
-            });
+    private void dataHndler()
+    {
+        boolean isok = true;
+        String email = this.email.getText().toString();
+        String password1 = this.password1.getText().toString();
+        String firstname = this.phone.getText().toString();
+        String lastname = this.firstname.getText().toString();
+        String phone = this.lastname.getText().toString();
+        String password2;
+        password2 = this.password2.getText().toString();
+        if (email.length() < 4 ||
+                email.indexOf('@') < 0 ||
+                email.indexOf('.') < 0) {
+            this.email.setError("email wrong format");
 
         }
+        if (password1.length() < 8 || password1.equals(password2) == false) {
+            this.password1.setError("Have to be at least 8 char and the same password ");
+            this.password2.setError("Have to be at least 8 char and the same password ");
 
+            isok = false;
+        }
+        if (lastname.length() == 0) {
+            this.firstname.setError("enter name");
+            isok = false;
+        }
+        if (isok) {
+            creatAcount(email, password1, password2, phone, lastname);
+        }
     }
+
+    private void creatAcount(final String email, String password1, String password2, String firstname, String lastname) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            private AccessibilityNodeInfo email;
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if ((task.isSuccessful())) {
+                    Toast.makeText(Singup.this, "sign up successful", Toast.LENGTH_SHORT).show();
+                    finish();
+
+                }
+                else
+                    {
+
+                    this.email.setError("sign up faild");
+                }
+            }
+        });
+    }
+}
+
+
+
+
+
+
 
 

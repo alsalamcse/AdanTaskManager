@@ -3,6 +3,7 @@ package com.example.adantaskmanager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,22 +33,24 @@ public class Singin extends AppCompatActivity {
         String email = etAdd1.getText().toString();
         String password = etAdd2.getText().toString();
         boolean isok = true;
-//        if(email.length()<4)
-//        {
-//            etAdd2.setError("Email lenght error");
-//            isok=false;
-//
-//        }
-//        if (email.indexOf("@")<0||email.indexOf(".")<0)
-//        {
-//            etAdd2.setError("email worng format");
-//            isok=false;
-//        }
-        if (isValidEmailAddress(email) == false) {
-            etAdd1.setError("Invalid Email");
-            isok = false;
+        if(email.length()<4)
+        {
+            etAdd2.setError("Email lenght error");
+           isok=false;
+
         }
-        if (password.length() < 8) {
+        if (email.indexOf("@")<0||email.indexOf(".")<0)
+        {
+            etAdd2.setError("email worng format");
+            isok=false;
+        }
+//        if (isValidEmailAddress(email) == false)
+//             {
+//          etAdd1.setError("Invalid Email");
+//            isok = false;
+//        }
+        if (password.length() <8)
+        {
             etAdd1.setError(" min lenght8");
             isok = false;
         }
@@ -73,6 +76,8 @@ public class Singin extends AppCompatActivity {
 
                     {
                 //go to ,mail screen(all task activity)
+                        Intent intent=new Intent(SinginActivity.this,MainTasksActivity.class);
+                        startActivity(intent);
 
             }
             else

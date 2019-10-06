@@ -10,54 +10,33 @@
         android:id="@+id/switchOnOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:layout_marginBottom="43dp"
         android:text="Switch"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="107dp" />
 
     <SeekBar
         android:id="@+id/seekBar2"
-        android:layout_width="0dp"
+        android:layout_width="151dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginRight="71dp"
-        android:layout_marginBottom="89dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edtFort"
-        app:layout_constraintTop_toBottomOf="@+id/switch" />
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="257dp" />
 
     <Button
         android:id="@+id/btnSave1"
         android:layout_width="86dp"
         android:layout_height="186dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginBottom="358dp"
         android:text="save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/seekBar2"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="389dp" />
 
     <EditText
         android:id="@+id/edtFort"
-        android:layout_width="0dp"
+        android:layout_width="151dp"
         android:layout_height="0dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="489dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="fort size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/seekBar2"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="242dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
